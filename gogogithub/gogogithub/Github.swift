@@ -70,11 +70,12 @@ class Github {
                     
                     guard let data = data else { complete(success: false); return }
                     
-                    if let dataString = String(data: data, encoding: .utf8) {
-                        print(dataString)
-                        
-                        complete(success: true)
-                    }
+                    guard let dataString = String(data: data, encoding: .utf8) else { complete(success: false); return }
+                    
+                    print(dataString)
+                    guard let token = dataString.components(separatedBy: "&").first?.components(separatedBy: "=").last else { complete(success: false); return }
+                    
+                    UserDefaults.standard.save(accessToken: token)
                     
                 }).resume()
             }

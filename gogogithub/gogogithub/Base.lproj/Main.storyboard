@@ -58,6 +58,9 @@
                             <constraint firstItem="TeK-aE-Jd6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="k3H-Uk-mDS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="kGV-wI-rCS" id="H2l-8u-xtx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

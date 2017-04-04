@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let code = try? Github.shared.getCodeFrom(url: url)
         
-        print(code)
+        print(code as Any)
         
         Github.shared.tokenRequestFor(url: url, saveOptions: .userDefaults) { (success) in
             if success {
