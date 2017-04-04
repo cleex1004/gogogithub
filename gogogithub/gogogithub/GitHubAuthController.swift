@@ -23,6 +23,8 @@ class GitHubAuthController: UIViewController {
     }
 
     @IBAction func printTokenPressed(_ sender: Any) {
+        let token = UserDefaults.standard.getAccessToken()
+        print(token as Any)
     }
 
     @IBAction func loginButtonPressed(_ sender: Any) {
