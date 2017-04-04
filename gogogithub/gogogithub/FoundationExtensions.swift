@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension UserDefaults {
+extension UserDefaults { //userdefaults.standard is like local storage 
     func getAccessToken() -> String? {
         guard let token = UserDefaults.standard.string(forKey: "access_token") else { return nil }
         return token
