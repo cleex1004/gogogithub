@@ -22,8 +22,8 @@ typealias GitHubOAuthCompletion = (Bool) -> ()
 
 class Github {
     
-    let githubClientID = "90c03ee49bda6a32a402"
-    let gitHubClientSecret = "00e0ea86c5af3a09f644f9cfa4699753617ade86"
+    let githubClientID = kgithubClientID
+    let gitHubClientSecret = kgitHubClientSecret
     
     static let shared = Github()
     

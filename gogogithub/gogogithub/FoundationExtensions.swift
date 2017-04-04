@@ -10,7 +10,7 @@ import Foundation
 
 
 extension UserDefaults {
-    func getAccessToken() -> String {
+    func getAccessToken() -> String? {
         guard let token = UserDefaults.standard.string(forKey: "access_token") else { return nil }
         return token
     }
