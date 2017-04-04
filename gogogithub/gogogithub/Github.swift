@@ -75,7 +75,8 @@ class Github {
                     print(dataString)
                     guard let token = dataString.components(separatedBy: "&").first?.components(separatedBy: "=").last else { complete(success: false); return }
                     
-                    UserDefaults.standard.save(accessToken: token)
+                    let tokenResult = UserDefaults.standard.save(accessToken: token)
+                    print(tokenResult)
                     
                 }).resume()
             }

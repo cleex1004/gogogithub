@@ -60,17 +60,49 @@
 		BCF28DE61E93462300C0CCFF /* gogogithub */ = {
 			isa = PBXGroup;
 			children = (
-				BCF28DE71E93462300C0CCFF /* AppDelegate.swift */,
-				BCF28DF91E93468A00C0CCFF /* Github.swift */,
-				BCF28DFF1E93EE0100C0CCFF /* Credentials.swift */,
-				BCF28DFD1E9354E600C0CCFF /* FoundationExtensions.swift */,
-				BCF28DFB1E9346CC00C0CCFF /* GitHubAuthController.swift */,
-				BCF28DEB1E93462300C0CCFF /* Main.storyboard */,
-				BCF28DEE1E93462300C0CCFF /* Assets.xcassets */,
-				BCF28DF01E93462300C0CCFF /* LaunchScreen.storyboard */,
-				BCF28DF31E93462300C0CCFF /* Info.plist */,
+				BCF28E041E9400A100C0CCFF /* Models */,
+				BCF28E011E93FFAD00C0CCFF /* Views */,
+				BCF28E021E93FFBA00C0CCFF /* Controllers */,
+				BCF28E031E94001C00C0CCFF /* Supporting */,
 			);
 			path = gogogithub;
+			sourceTree = "<group>";
+		};
+		BCF28E011E93FFAD00C0CCFF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCF28DF01E93462300C0CCFF /* LaunchScreen.storyboard */,
+				BCF28DEB1E93462300C0CCFF /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BCF28E021E93FFBA00C0CCFF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BCF28DE71E93462300C0CCFF /* AppDelegate.swift */,
+				BCF28DFB1E9346CC00C0CCFF /* GitHubAuthController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BCF28E031E94001C00C0CCFF /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				BCF28DF31E93462300C0CCFF /* Info.plist */,
+				BCF28DEE1E93462300C0CCFF /* Assets.xcassets */,
+				BCF28DFF1E93EE0100C0CCFF /* Credentials.swift */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		BCF28E041E9400A100C0CCFF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BCF28DF91E93468A00C0CCFF /* Github.swift */,
+				BCF28DFD1E9354E600C0CCFF /* FoundationExtensions.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
