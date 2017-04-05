@@ -136,6 +136,7 @@
                         <outlet property="repoTableView" destination="YEJ-rc-0KS" id="6aV-7p-r3c"/>
                         <outlet property="searchBar" destination="PfV-Z3-DgE" id="RUv-cF-GAt"/>
                         <outlet property="searchDisplayController" destination="0o5-M2-c3K" id="lZ3-fz-eiE"/>
+                        <segue destination="HXT-DB-v97" kind="presentation" identifier="RepoDetailViewController" id="PAR-6z-9LR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQg-d7-tFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -149,6 +150,24 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="797.60000000000002" y="36.431784107946029"/>
+        </scene>
+        <!--Repo Detail View Controller-->
+        <scene sceneID="GhC-MH-AnW">
+            <objects>
+                <viewController id="HXT-DB-v97" customClass="RepoDetailViewController" customModule="gogogithub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D41-gi-2QY"/>
+                        <viewControllerLayoutGuide type="bottom" id="szC-5R-LPZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UUa-Uf-Zjt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xYS-Rj-2pG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1570" y="31"/>
         </scene>
     </scenes>
     <resources>

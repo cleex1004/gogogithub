@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepoViewController: UIViewController, UITableViewDataSource {
+class RepoViewController: UIViewController {
     var allRepos = [Repository]() {
         didSet {
             self.repoTableView.reloadData()
@@ -29,14 +29,13 @@ class RepoViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.repoTableView.dataSource = self
+        self.repoTableView.delegate = self
         self.searchBar.delegate = self
         update()
     }
     
     func update() {
-        print("update repo controller here!")
         Github.shared.getRepos { (repositories) in
-            print("in updates")
             for repo in repositories! {
                 self.allRepos.append(repo)
             }
@@ -44,6 +43,27 @@ class RepoViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == RepoDetailViewController.identifier {
+            segue.destination.transitioningDelegate = self
+        }
+    }
+    
+}
+
+//MARK: UIViewControllerTransitioningDelegate
+extension RepoViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let customTransition = CustomTransition(duration: 1.0)
+        
+        return customTransition
+    }
+}
+
+//MARK: UITableViewDataSource UITableViewDelegate
+extension RepoViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return displayRepos?.count ?? allRepos.count
     }
@@ -58,8 +78,12 @@ class RepoViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: RepoDetailViewController.identifier, sender: nil)
+    }
 }
 
+//MARK: UISearchBarDelegate
 extension RepoViewController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let searchedText = searchBar.text {
@@ -79,6 +103,7 @@ extension RepoViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder() //dismisses keyboard
     }
-    
 }
+
+
 

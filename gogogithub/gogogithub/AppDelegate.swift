@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             presentAuthController()
         }
-        
         return true
     }
     
@@ -53,16 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let authViewController = self.authController, let repoViewController = self.repoController {
                 
                 authViewController.dismissAuthController()
-                print("in token request for")
                 repoViewController.update()
             }
-//            if success {
-//                print("Yay! Access token")
-//            } else {
-//                print("Bummer!!! No Success")
-//            }
         }
-        
         return true
     }
 
