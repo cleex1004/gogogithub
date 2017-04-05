@@ -23,10 +23,6 @@ class RepoViewController: UIViewController, UITableViewDataSource {
         update()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//    }
     func update() {
         print("update repo controller here!")
         Github.shared.getRepos { (repositories) in
@@ -34,12 +30,6 @@ class RepoViewController: UIViewController, UITableViewDataSource {
             for repo in repositories! {
                 self.allRepos.append(repo)
             }
-            //                self.allRepos = repositories ?? []
-            //                self.repoTableView.reloadData()
-            
-            
-            //print(repositories?.first)
-            //update tableView
             
         }
     }

@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 authViewController.dismissAuthController()
                 print("in token request for")
-                repoViewController.viewDidLoad()
+                repoViewController.update()
             }
 //            if success {
 //                print("Yay! Access token")
