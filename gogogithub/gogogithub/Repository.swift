@@ -12,6 +12,9 @@ class Repository {
     let name : String
     let description : String?
     let language : String?
+    var stars : Int?
+    let isFork : Bool?
+    let createdAt : String?
     
     init?(json: [String: Any]) {
         if let name = json["name"] as? String {
@@ -26,6 +29,21 @@ class Repository {
         }
         if let language = json["language"] as? String {
             self.language = language
+        } else {
+            return nil
+        }
+        if let stars = json["stargazers_count"] as? Int {
+            self.stars = stars
+        } else {
+            return nil
+        }
+        if let isFork = json["fork"] as? Bool {
+            self.isFork = isFork
+        } else {
+            return nil
+        }
+        if let createdAt = json["created_at"] as? String {
+            self.createdAt = createdAt
         } else {
             return nil
         }

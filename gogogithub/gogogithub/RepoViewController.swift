@@ -32,6 +32,11 @@ class RepoViewController: UIViewController {
         self.repoTableView.delegate = self
         self.searchBar.delegate = self
         update()
+        
+        let repoNib = UINib(nibName: "RepositoryCell", bundle: nil)
+        self.repoTableView.register(repoNib, forCellReuseIdentifier: RepositoryCell.identifier)
+        self.repoTableView.estimatedRowHeight = 50
+        self.repoTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func update() {
@@ -47,7 +52,13 @@ class RepoViewController: UIViewController {
         super.prepare(for: segue, sender: sender)
         
         if segue.identifier == RepoDetailViewController.identifier {
+            if let selectedIndex = self.repoTableView.indexPathForSelectedRow?.row{
+                let selectedRepo = self.allRepos[selectedIndex]
+                guard let destinationController = segue.destination as? RepoDetailViewController else { return }
+                destinationController.repo = selectedRepo
+            }
             segue.destination.transitioningDelegate = self
+            
         }
     }
     
@@ -69,11 +80,10 @@ extension RepoViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = repoTableView.dequeueReusableCell(withIdentifier: "repoCell", for: indexPath)
+        let cell = repoTableView.dequeueReusableCell(withIdentifier: RepositoryCell.identifier, for: indexPath) as! RepositoryCell
         let currentRepo = allRepos[indexPath.row]
         
-        cell.textLabel?.text = displayRepos?[indexPath.row].name ?? currentRepo.name
-        cell.detailTextLabel?.text = displayRepos?[indexPath.row].description ?? currentRepo.description
+        cell.repository = currentRepo
         
         return cell
     }
@@ -105,5 +115,5 @@ extension RepoViewController : UISearchBarDelegate {
     }
 }
 
-
+//iso8601 formatting for date
 
