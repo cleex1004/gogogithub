@@ -43,7 +43,8 @@ class Repository {
             return nil
         }
         if let createdAt = json["created_at"] as? String {
-            self.createdAt = createdAt
+            let date = createdAt.components(separatedBy: "T").first?.components(separatedBy: "-")
+            self.createdAt = "\(date![1])-\(date![2])-\(date![0])"
         } else {
             return nil
         }

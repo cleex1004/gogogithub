@@ -29,11 +29,11 @@ class RepoDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.nameLabel.text = self.repo.name
-//        self.dateLabel.text = DateFormatter.localizedString(from: self.repo.createdAt!, dateStyle: .short, timeStyle: .short)
+        //self.dateLabel.text = DateFormatter.localizedString(from: self.repo.createdAt!, dateStyle: .short, timeStyle: .short)
         self.dateLabel.text = self.repo.createdAt
         self.languageLabel.text = self.repo.language
-        self.starsLabel.text = "Number of stars: \(String(describing: self.repo.stars))"
-        self.forkLabel.text = "This is a fork: \(String(describing: self.repo.isFork))"
+        self.starsLabel.text = "Number of stars: \(String(describing: self.repo.stars!))"
+        self.forkLabel.text = "This is a fork: \(String(describing: self.repo.isFork!))"
         self.descriptionLabel.text = self.repo.description
     }
 }
