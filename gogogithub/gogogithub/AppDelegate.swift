@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         if let token = UserDefaults.standard.getAccessToken() {
-            print(token)
+            print("in app delegate \(token)")
         } else {
             presentAuthController()
         }
@@ -45,15 +45,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-//        let code = try? Github.shared.getCodeFrom(url: url)
+        //let code = try? Github.shared.getCodeFrom(url: url)
         
-//        print(code as Any)
+        //print(code as Any)
         
         Github.shared.tokenRequestFor(url: url, saveOptions: .userDefaults) { (success) in
             if let authViewController = self.authController, let repoViewController = self.repoController {
                 
                 authViewController.dismissAuthController()
-                repoViewController.update()
+                print("in token request for")
+                repoViewController.viewDidLoad()
             }
 //            if success {
 //                print("Yay! Access token")
