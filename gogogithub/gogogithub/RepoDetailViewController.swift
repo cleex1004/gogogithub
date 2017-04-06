@@ -29,7 +29,6 @@ class RepoDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.nameLabel.text = self.repo.name
-        //self.dateLabel.text = DateFormatter.localizedString(from: self.repo.createdAt!, dateStyle: .short, timeStyle: .short)
         self.dateLabel.text = self.repo.createdAt
         self.languageLabel.text = self.repo.language
         self.starsLabel.text = "Number of stars: \(String(describing: self.repo.stars!))"
@@ -52,7 +51,6 @@ class RepoDetailViewController: UIViewController {
     
 //    @IBAction func goBackButtonPressed(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
-//        self.animationController(forDismissed: <#T##UIViewController#>)
 //    }
     
 }
