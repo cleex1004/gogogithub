@@ -36,13 +36,6 @@ class GitHubAuthController: UIViewController {
             self.loginButton.isEnabled = true
         }
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        if (UserDefaults.standard.getAccessToken() != nil) {
-//            loginButton.isHidden = true
-//            loginButton.isEnabled = false
-//        }
-//    }
 
     @IBAction func printTokenPressed(_ sender: Any) {
         let token = UserDefaults.standard.getAccessToken()

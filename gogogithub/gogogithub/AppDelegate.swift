@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var repoController : RepoViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         if let token = UserDefaults.standard.getAccessToken() {
             print("in app delegate \(token)")
@@ -43,10 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-        //let code = try? Github.shared.getCodeFrom(url: url)
-        
-        //print(code as Any)
         
         Github.shared.tokenRequestFor(url: url, saveOptions: .userDefaults) { (success) in
             if let authViewController = self.authController, let repoViewController = self.repoController {
