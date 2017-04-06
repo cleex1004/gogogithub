@@ -25,7 +25,6 @@ class RepoViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.repoTableView.dataSource = self
@@ -64,10 +63,8 @@ class RepoViewController: UIViewController {
                 destinationController.repo = selectedRepo
             }
             segue.destination.transitioningDelegate = self
-            
         }
     }
-    
 }
 
 //MARK: UIViewControllerTransitioningDelegate

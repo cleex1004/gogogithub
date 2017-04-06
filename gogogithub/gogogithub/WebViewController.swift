@@ -26,6 +26,4 @@ class WebViewController: UIViewController {
         
         self.webView.load(urlRequest)
     }
-
-
 }
