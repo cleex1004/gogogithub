@@ -47,12 +47,7 @@ class RepoDetailViewController: UIViewController {
     
     @IBAction func goBackButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: RepoViewController.identifier, sender: nil)
-    }
-    
-//    @IBAction func goBackButtonPressed(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
-    
+    }    
 }
 
 //MARK: UIViewControllerTransitioningDelegate
@@ -62,11 +57,6 @@ extension RepoDetailViewController: UIViewControllerTransitioningDelegate {
         
         return customTransition
     }
-    
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        let customTransition = CustomTransition(duration: 1.0)
-//        
-//        return customTransition
-//    }
+
 }
 
