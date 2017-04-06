@@ -64,9 +64,9 @@ class RepoDetailViewController: UIViewController {
     @IBAction func moreDetailsButton(_ sender: UIButton) {
         guard let repo = repo else { return }
         
-//        presentSafariViewControllerWith(urlString: repo.repoUrlString!)
+        presentSafariViewControllerWith(urlString: repo.repoUrlString!)
         
-        presentWebViewControllerWith(urlString: repo.repoUrlString!)
+//        presentWebViewControllerWith(urlString: repo.repoUrlString!)
     }
     
     @IBAction func goBackButton(_ sender: UIButton) {
