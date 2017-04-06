@@ -43,8 +43,13 @@ class Repository {
             return nil
         }
         if let createdAt = json["created_at"] as? String {
+//            let dateFormatter = ISO8601DateFormatter()
+//            let dateType = dateFormatter.date(from: createdAt)
+//            let dateString = dateFormatter.string(from: dateType!)
+//            self.createdAt = dateString
             let date = createdAt.components(separatedBy: "T").first?.components(separatedBy: "-")
             self.createdAt = "\(date![1])-\(date![2])-\(date![0])"
+            
         } else {
             return nil
         }
