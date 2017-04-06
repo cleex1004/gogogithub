@@ -53,7 +53,13 @@ class RepoViewController: UIViewController {
         
         if segue.identifier == RepoDetailViewController.identifier {
             if let selectedIndex = self.repoTableView.indexPathForSelectedRow?.row{
-                let selectedRepo = self.allRepos[selectedIndex]
+                var selectedRepo : Repository
+                if searchBar.text == "" {
+                    selectedRepo = allRepos[selectedIndex]
+                } else {
+                    selectedRepo = displayRepos![selectedIndex]
+                }
+
                 guard let destinationController = segue.destination as? RepoDetailViewController else { return }
                 destinationController.repo = selectedRepo
             }
@@ -81,10 +87,13 @@ extension RepoViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = repoTableView.dequeueReusableCell(withIdentifier: RepositoryCell.identifier, for: indexPath) as! RepositoryCell
-        let currentRepo = allRepos[indexPath.row]
-        
+        var currentRepo : Repository
+        if searchBar.text == "" {
+            currentRepo = allRepos[indexPath.row]
+        } else {
+            currentRepo = displayRepos![indexPath.row]
+        }
         cell.repository = currentRepo
-        
         return cell
     }
     
@@ -115,5 +124,4 @@ extension RepoViewController : UISearchBarDelegate {
     }
 }
 
-//iso8601 formatting for date
 

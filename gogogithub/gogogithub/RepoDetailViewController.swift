@@ -36,5 +36,26 @@ class RepoDetailViewController: UIViewController {
         self.forkLabel.text = "This is a fork: \(String(describing: self.repo.isFork!))"
         self.descriptionLabel.text = self.repo.description
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == RepoViewController.identifier {
+            segue.destination.transitioningDelegate = self
+            
+        }
+    }
+    @IBAction func goBackButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: RepoViewController.identifier, sender: nil)
+    }
+}
+
+//MARK: UIViewControllerTransitioningDelegate
+extension RepoDetailViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let customTransition = CustomTransition(duration: 1.0)
+        
+        return customTransition
+    }
 }
 
