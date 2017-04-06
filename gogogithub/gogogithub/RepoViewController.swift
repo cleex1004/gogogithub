@@ -109,6 +109,7 @@ extension RepoViewController : UISearchBarDelegate {
             print(searchText)
             //searchBar.text = "Invalid!"
             let lastIndex = searchText.index(before: searchText.endIndex)
+            searchBar.text = searchText.substring(to: lastIndex)
         }
         
         if let searchedText = searchBar.text {
