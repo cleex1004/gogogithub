@@ -15,6 +15,9 @@
 		BCF28DFC1E9346CC00C0CCFF /* GitHubAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF28DFB1E9346CC00C0CCFF /* GitHubAuthController.swift */; };
 		BCF28DFE1E9354E600C0CCFF /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF28DFD1E9354E600C0CCFF /* FoundationExtensions.swift */; };
 		BCF28E001E93EE0100C0CCFF /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF28DFF1E93EE0100C0CCFF /* Credentials.swift */; };
+		BCF28E061E940C1C00C0CCFF /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF28E051E940C1C00C0CCFF /* RepoViewController.swift */; };
+		BCF28E081E940D5B00C0CCFF /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF28E071E940D5B00C0CCFF /* UIExtensions.swift */; };
+		BCF28E0A1E94195400C0CCFF /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF28E091E94195400C0CCFF /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		BCF28DFB1E9346CC00C0CCFF /* GitHubAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAuthController.swift; sourceTree = "<group>"; };
 		BCF28DFD1E9354E600C0CCFF /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		BCF28DFF1E93EE0100C0CCFF /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		BCF28E051E940C1C00C0CCFF /* RepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		BCF28E071E940D5B00C0CCFF /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		BCF28E091E94195400C0CCFF /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +77,8 @@
 		BCF28E011E93FFAD00C0CCFF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BCF28DF01E93462300C0CCFF /* LaunchScreen.storyboard */,
 				BCF28DEB1E93462300C0CCFF /* Main.storyboard */,
+				BCF28DF01E93462300C0CCFF /* LaunchScreen.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -80,6 +86,7 @@
 		BCF28E021E93FFBA00C0CCFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCF28E051E940C1C00C0CCFF /* RepoViewController.swift */,
 				BCF28DE71E93462300C0CCFF /* AppDelegate.swift */,
 				BCF28DFB1E9346CC00C0CCFF /* GitHubAuthController.swift */,
 			);
@@ -99,8 +106,10 @@
 		BCF28E041E9400A100C0CCFF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BCF28E091E94195400C0CCFF /* Repository.swift */,
 				BCF28DF91E93468A00C0CCFF /* Github.swift */,
 				BCF28DFD1E9354E600C0CCFF /* FoundationExtensions.swift */,
+				BCF28E071E940D5B00C0CCFF /* UIExtensions.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -179,7 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCF28DFE1E9354E600C0CCFF /* FoundationExtensions.swift in Sources */,
+				BCF28E081E940D5B00C0CCFF /* UIExtensions.swift in Sources */,
 				BCF28DFA1E93468A00C0CCFF /* Github.swift in Sources */,
+				BCF28E0A1E94195400C0CCFF /* Repository.swift in Sources */,
+				BCF28E061E940C1C00C0CCFF /* RepoViewController.swift in Sources */,
 				BCF28E001E93EE0100C0CCFF /* Credentials.swift in Sources */,
 				BCF28DFC1E9346CC00C0CCFF /* GitHubAuthController.swift in Sources */,
 				BCF28DE81E93462300C0CCFF /* AppDelegate.swift in Sources */,
@@ -348,6 +360,7 @@
 				BCF28DF81E93462300C0CCFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
