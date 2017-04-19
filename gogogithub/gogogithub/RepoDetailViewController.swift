@@ -46,6 +46,7 @@ class RepoDetailViewController: UIViewController {
         }
     }
     
+
     func presentSafariViewControllerWith(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         
@@ -77,6 +78,7 @@ class RepoDetailViewController: UIViewController {
     @IBAction func goBackButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: RepoViewController.identifier, sender: nil)
     }
+
 }
 
 //MARK: UIViewControllerTransitioningDelegate
@@ -86,5 +88,6 @@ extension RepoDetailViewController: UIViewControllerTransitioningDelegate {
         
         return customTransition
     }
+
 }
 
