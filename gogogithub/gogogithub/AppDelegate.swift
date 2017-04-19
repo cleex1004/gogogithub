@@ -43,10 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        //let code = try? Github.shared.getCodeFrom(url: url)
-        
-        //print(code as Any)
-        
         Github.shared.tokenRequestFor(url: url, saveOptions: .userDefaults) { (success) in
             if let authViewController = self.authController, let repoViewController = self.repoController {
                 

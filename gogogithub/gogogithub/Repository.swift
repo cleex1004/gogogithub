@@ -15,6 +15,7 @@ class Repository {
     var stars : Int?
     let isFork : Bool?
     let createdAt : String?
+    let repoUrlString : String?
     
     init?(json: [String: Any]) {
         if let name = json["name"] as? String {
@@ -43,13 +44,14 @@ class Repository {
             return nil
         }
         if let createdAt = json["created_at"] as? String {
-//            let dateFormatter = ISO8601DateFormatter()
-//            let dateType = dateFormatter.date(from: createdAt)
-//            let dateString = dateFormatter.string(from: dateType!)
-//            self.createdAt = dateString
             let date = createdAt.components(separatedBy: "T").first?.components(separatedBy: "-")
             self.createdAt = "\(date![1])-\(date![2])-\(date![0])"
             
+        } else {
+            return nil
+        }
+        if let repoUrlString = json["html_url"] as? String { //ask how to get defaul with nil coalescing here
+            self.repoUrlString = repoUrlString 
         } else {
             return nil
         }
