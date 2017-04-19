@@ -39,7 +39,8 @@ class Github {
         
         
     }
-    
+
+//MARK: oAuthRequestWith method
     func oAuthRequestWith(parameters: [String : String]) {
         var parametersString = ""
         
@@ -56,7 +57,8 @@ class Github {
             UIApplication.shared.open(requestURL)
         }
     }
-    
+ 
+//MARK: getCodeFrom method
     func getCodeFrom(url: URL) throws -> String {
         guard let code = url.absoluteString.components(separatedBy: "=").last else {
             throw GitHubAuthError.extractingCode
@@ -65,6 +67,7 @@ class Github {
         return code
     }
     
+//MARK: tokenRequestFor method
     func tokenRequestFor(url: URL, saveOptions: SaveOptions, completion: @escaping GitHubOAuthCompletion) {
         func complete(success: Bool) {
             OperationQueue.main.addOperation {
@@ -99,6 +102,7 @@ class Github {
         }
     }
     
+//MARK: getRepos method
     func getRepos(completion: @escaping FetchReposCompletion) {
         
         func returnToMain(results: [Repository]?) {

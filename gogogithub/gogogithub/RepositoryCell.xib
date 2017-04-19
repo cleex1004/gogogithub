@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryCell" rowHeight="106" id="KGk-i7-Jjw" customClass="RepositoryCell" customModule="gogogithub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbX-x4-JZx">
+                        <rect key="frame" x="8" y="8" width="304" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13l-t7-pTA">
+                        <rect key="frame" x="32" y="35.5" width="256" height="39"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKj-sn-cmp">
+                        <rect key="frame" x="32" y="80.5" width="256" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="13l-t7-pTA" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="0ud-f9-aFc"/>
+                    <constraint firstItem="wbX-x4-JZx" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="7GP-FB-xk8"/>
+                    <constraint firstItem="DKj-sn-cmp" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.8" id="88P-XN-GWp"/>
+                    <constraint firstAttribute="bottom" secondItem="DKj-sn-cmp" secondAttribute="bottom" constant="8" id="P5c-KB-gSG"/>
+                    <constraint firstItem="13l-t7-pTA" firstAttribute="top" secondItem="wbX-x4-JZx" secondAttribute="bottom" constant="6" id="V53-S4-UgG"/>
+                    <constraint firstItem="DKj-sn-cmp" firstAttribute="top" secondItem="13l-t7-pTA" secondAttribute="bottom" constant="6" id="Vbx-pf-2zF"/>
+                    <constraint firstItem="wbX-x4-JZx" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.95" id="i8Z-zI-YDK"/>
+                    <constraint firstItem="DKj-sn-cmp" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="kpS-v7-5Ma"/>
+                    <constraint firstItem="wbX-x4-JZx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="kvG-zP-UxN"/>
+                    <constraint firstItem="13l-t7-pTA" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.8" id="zey-WM-Uma"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="DKj-sn-cmp" id="LKC-xh-qnU"/>
+                <outlet property="languageLabel" destination="13l-t7-pTA" id="NIl-CM-CEH"/>
+                <outlet property="nameLabel" destination="wbX-x4-JZx" id="zKT-s0-3St"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="93"/>
+        </tableViewCell>
+    </objects>
+</document>

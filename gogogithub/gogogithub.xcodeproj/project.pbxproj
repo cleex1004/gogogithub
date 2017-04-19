@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCCC034B1E956E7B00644BDF /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC034A1E956E7B00644BDF /* RepoDetailViewController.swift */; };
+		BCCC034D1E95706A00644BDF /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC034C1E95706A00644BDF /* CustomTransition.swift */; };
+		BCCC03501E95944000644BDF /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC034E1E95944000644BDF /* RepositoryCell.swift */; };
+		BCCC03511E95944000644BDF /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCC034F1E95944000644BDF /* RepositoryCell.xib */; };
 		BCF28DE81E93462300C0CCFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF28DE71E93462300C0CCFF /* AppDelegate.swift */; };
 		BCF28DED1E93462300C0CCFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCF28DEB1E93462300C0CCFF /* Main.storyboard */; };
 		BCF28DEF1E93462300C0CCFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF28DEE1E93462300C0CCFF /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BCCC034A1E956E7B00644BDF /* RepoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
+		BCCC034C1E95706A00644BDF /* CustomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
+		BCCC034E1E95944000644BDF /* RepositoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		BCCC034F1E95944000644BDF /* RepositoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		BCF28DE41E93462300C0CCFF /* gogogithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gogogithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF28DE71E93462300C0CCFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCF28DEC1E93462300C0CCFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +85,8 @@
 		BCF28E011E93FFAD00C0CCFF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BCCC034E1E95944000644BDF /* RepositoryCell.swift */,
+				BCCC034F1E95944000644BDF /* RepositoryCell.xib */,
 				BCF28DEB1E93462300C0CCFF /* Main.storyboard */,
 				BCF28DF01E93462300C0CCFF /* LaunchScreen.storyboard */,
 			);
@@ -86,7 +96,9 @@
 		BCF28E021E93FFBA00C0CCFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCCC034A1E956E7B00644BDF /* RepoDetailViewController.swift */,
 				BCF28E051E940C1C00C0CCFF /* RepoViewController.swift */,
+				BCCC034C1E95706A00644BDF /* CustomTransition.swift */,
 				BCF28DE71E93462300C0CCFF /* AppDelegate.swift */,
 				BCF28DFB1E9346CC00C0CCFF /* GitHubAuthController.swift */,
 			);
@@ -177,6 +189,7 @@
 				BCF28DF21E93462300C0CCFF /* LaunchScreen.storyboard in Resources */,
 				BCF28DEF1E93462300C0CCFF /* Assets.xcassets in Resources */,
 				BCF28DED1E93462300C0CCFF /* Main.storyboard in Resources */,
+				BCCC03511E95944000644BDF /* RepositoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,8 +206,11 @@
 				BCF28E0A1E94195400C0CCFF /* Repository.swift in Sources */,
 				BCF28E061E940C1C00C0CCFF /* RepoViewController.swift in Sources */,
 				BCF28E001E93EE0100C0CCFF /* Credentials.swift in Sources */,
+				BCCC03501E95944000644BDF /* RepositoryCell.swift in Sources */,
 				BCF28DFC1E9346CC00C0CCFF /* GitHubAuthController.swift in Sources */,
+				BCCC034D1E95706A00644BDF /* CustomTransition.swift in Sources */,
 				BCF28DE81E93462300C0CCFF /* AppDelegate.swift in Sources */,
+				BCCC034B1E956E7B00644BDF /* RepoDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

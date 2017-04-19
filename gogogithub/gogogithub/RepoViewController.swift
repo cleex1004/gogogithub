@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepoViewController: UIViewController, UITableViewDataSource {
+class RepoViewController: UIViewController {
     var allRepos = [Repository]() {
         didSet {
             self.repoTableView.reloadData()
@@ -29,14 +29,18 @@ class RepoViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.repoTableView.dataSource = self
+        self.repoTableView.delegate = self
         self.searchBar.delegate = self
         update()
+        
+        let repoNib = UINib(nibName: "RepositoryCell", bundle: nil)
+        self.repoTableView.register(repoNib, forCellReuseIdentifier: RepositoryCell.identifier)
+        self.repoTableView.estimatedRowHeight = 50
+        self.repoTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func update() {
-        print("update repo controller here!")
         Github.shared.getRepos { (repositories) in
-            print("in updates")
             for repo in repositories! {
                 self.allRepos.append(repo)
             }
@@ -44,22 +48,61 @@ class RepoViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == RepoDetailViewController.identifier {
+            if let selectedIndex = self.repoTableView.indexPathForSelectedRow?.row{
+                var selectedRepo : Repository
+                if searchBar.text == "" {
+                    selectedRepo = allRepos[selectedIndex]
+                } else {
+                    selectedRepo = displayRepos![selectedIndex]
+                }
+
+                guard let destinationController = segue.destination as? RepoDetailViewController else { return }
+                destinationController.repo = selectedRepo
+            }
+            segue.destination.transitioningDelegate = self
+            
+        }
+    }
+    
+}
+
+//MARK: UIViewControllerTransitioningDelegate
+extension RepoViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let customTransition = CustomTransition(duration: 1.0)
+        
+        return customTransition
+    }
+}
+
+//MARK: UITableViewDataSource UITableViewDelegate
+extension RepoViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return displayRepos?.count ?? allRepos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = repoTableView.dequeueReusableCell(withIdentifier: "repoCell", for: indexPath)
-        let currentRepo = allRepos[indexPath.row]
-        
-        cell.textLabel?.text = displayRepos?[indexPath.row].name ?? currentRepo.name
-        cell.detailTextLabel?.text = displayRepos?[indexPath.row].description ?? currentRepo.description
-        
+        let cell = repoTableView.dequeueReusableCell(withIdentifier: RepositoryCell.identifier, for: indexPath) as! RepositoryCell
+        var currentRepo : Repository
+        if searchBar.text == "" {
+            currentRepo = allRepos[indexPath.row]
+        } else {
+            currentRepo = displayRepos![indexPath.row]
+        }
+        cell.repository = currentRepo
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: RepoDetailViewController.identifier, sender: nil)
+    }
 }
 
+//MARK: UISearchBarDelegate
 extension RepoViewController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let searchedText = searchBar.text {
@@ -79,6 +122,6 @@ extension RepoViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder() //dismisses keyboard
     }
-    
 }
+
 

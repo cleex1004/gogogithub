@@ -17,14 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var repoController : RepoViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         if let token = UserDefaults.standard.getAccessToken() {
             print("in app delegate \(token)")
         } else {
             presentAuthController()
         }
-        
         return true
     }
     
@@ -53,16 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let authViewController = self.authController, let repoViewController = self.repoController {
                 
                 authViewController.dismissAuthController()
-                print("in token request for")
                 repoViewController.update()
             }
-//            if success {
-//                print("Yay! Access token")
-//            } else {
-//                print("Bummer!!! No Success")
-//            }
         }
-        
         return true
     }
 
