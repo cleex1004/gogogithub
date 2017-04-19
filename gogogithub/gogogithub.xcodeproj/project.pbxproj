@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC12A4711E96B34D00386A4A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC12A4701E96B34D00386A4A /* WebViewController.swift */; };
+		BC8E51361E96E5AD005308C8 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E51351E96E5AD005308C8 /* Notes.swift */; };
 		BCCC034B1E956E7B00644BDF /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC034A1E956E7B00644BDF /* RepoDetailViewController.swift */; };
 		BCCC034D1E95706A00644BDF /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC034C1E95706A00644BDF /* CustomTransition.swift */; };
 		BCCC03501E95944000644BDF /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC034E1E95944000644BDF /* RepositoryCell.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC12A4701E96B34D00386A4A /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		BC8E51351E96E5AD005308C8 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		BCCC034A1E956E7B00644BDF /* RepoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
 		BCCC034C1E95706A00644BDF /* CustomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
 		BCCC034E1E95944000644BDF /* RepositoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 		BCF28E021E93FFBA00C0CCFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC12A4701E96B34D00386A4A /* WebViewController.swift */,
 				BCCC034A1E956E7B00644BDF /* RepoDetailViewController.swift */,
 				BCF28E051E940C1C00C0CCFF /* RepoViewController.swift */,
 				BCCC034C1E95706A00644BDF /* CustomTransition.swift */,
@@ -108,6 +113,7 @@
 		BCF28E031E94001C00C0CCFF /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				BC8E51351E96E5AD005308C8 /* Notes.swift */,
 				BCF28DF31E93462300C0CCFF /* Info.plist */,
 				BCF28DEE1E93462300C0CCFF /* Assets.xcassets */,
 				BCF28DFF1E93EE0100C0CCFF /* Credentials.swift */,
@@ -201,12 +207,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCF28DFE1E9354E600C0CCFF /* FoundationExtensions.swift in Sources */,
+				BC8E51361E96E5AD005308C8 /* Notes.swift in Sources */,
 				BCF28E081E940D5B00C0CCFF /* UIExtensions.swift in Sources */,
 				BCF28DFA1E93468A00C0CCFF /* Github.swift in Sources */,
 				BCF28E0A1E94195400C0CCFF /* Repository.swift in Sources */,
 				BCF28E061E940C1C00C0CCFF /* RepoViewController.swift in Sources */,
 				BCF28E001E93EE0100C0CCFF /* Credentials.swift in Sources */,
 				BCCC03501E95944000644BDF /* RepositoryCell.swift in Sources */,
+				BC12A4711E96B34D00386A4A /* WebViewController.swift in Sources */,
 				BCF28DFC1E9346CC00C0CCFF /* GitHubAuthController.swift in Sources */,
 				BCCC034D1E95706A00644BDF /* CustomTransition.swift in Sources */,
 				BCF28DE81E93462300C0CCFF /* AppDelegate.swift in Sources */,
